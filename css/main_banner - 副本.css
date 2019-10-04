@@ -1,0 +1,122 @@
+/* 公共样式 */
+#banner {
+    margin-bottom: 1rem;
+}
+
+#banner .pull-left{
+    float: left!important;
+}
+
+#banner .pull-right{
+    float: right!important;
+}
+
+#banner .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+#banner .clearfix { display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+#banner .clearfix { display: block; }
+
+/* close commented backslash hack */
+#banner ul,li{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+
+/* 轮播图插件样式 */
+#banner .carousel-box{
+    position: relative;
+    width:100%;
+}
+
+#banner .transverse-box{
+    position: relative;
+    width:66.7%;
+}
+
+#banner .img-item{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 0;
+}
+
+#banner .vertical-box{
+    position: relative;
+    width:33.3%;
+}
+
+#banner .vertical-box ul{
+    overflow: hidden;
+}
+
+#banner .img-item{
+    transition: width 1s;
+}
+
+#banner .img-item img{
+    width:100%;
+    height:100%;
+}
+#banner .vertical-box ul li{
+    font-size: 0;
+}
+
+#banner .vertical-box ul li img{
+    width:100%;
+    height:100%;
+}
+
+#banner .left-arrow:hover{
+	border-top: 0.8rem solid white;
+    border-right: 0.8rem solid white;
+    box-shadow: 0.4rem -0.4rem 0 black;
+}
+#banner .right-arrow:hover{
+	border-top: 0.8rem solid white;
+    border-right: 0.8rem solid white;
+    box-shadow: 0.4rem -0.4rem 0 black;
+}
+#banner .left-arrow{
+    margin-left:15px;
+    cursor:pointer;
+    position: absolute;
+    top: 50%;
+    width: 3rem;
+    height: 3rem;
+    border-top: 0.6rem solid black;
+    border-right: 0.6rem solid black;
+    box-shadow: 0 0 0 lightgray;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+	left: 0;
+    -webkit-transform: translate3d(0, -50%, 0) rotate(-135deg);
+    transform: translate3d(0, -50%, 0) rotate(-135deg);
+}
+
+#banner .right-arrow{
+    margin-right:15px;
+    cursor:pointer;
+    position: absolute;
+    top: 50%;
+    width: 3rem;
+    height: 3rem;
+    border-top: 0.6rem solid black;
+    border-right: 0.6rem solid black;
+    box-shadow: 0 0 0 lightgray;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+	right: 0;
+    -webkit-transform: translate3d(0, -50%, 0) rotate(45deg);
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+}
