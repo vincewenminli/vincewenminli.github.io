@@ -3,8 +3,26 @@
     margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 1279px){
-	.clearfix{
+@media screen and (max-width: 359px){
+	#banner .clearfix{
+    display: block;
+    font-size: 0;
+    content: "";
+    height:150px;
+	display: block;
+}
+}
+@media screen and (min-width: 360px){
+	#banner .clearfix{
+    display: block;
+    font-size: 0;
+    content: "";
+    height:180px;
+	display: block;
+}
+}
+@media screen and (min-width: 460px){
+	#banner .clearfix{
     display: block;
     font-size: 0;
     content: "";
@@ -14,7 +32,7 @@
 }
 
 @media screen and (min-width: 1280px){
-	.clearfix{
+	#banner .clearfix{
     display: block;
     font-size: 0;
     content: "";
@@ -24,7 +42,7 @@
 }
 
 @media screen and (min-width: 1472px){
-	.clearfix{
+	#banner .clearfix{
     display: block;
     font-size: 0;
     content: "";
