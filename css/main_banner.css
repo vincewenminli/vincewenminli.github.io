@@ -3,14 +3,35 @@
     margin-bottom: 1rem;
 }
 
-#banner .clearfix{
+@media screen and (max-width: 1279px){
+	.clearfix{
     display: block;
     font-size: 0;
     content: "";
-    height:325px;
+    height:250px;
 	display: block;
 }
+}
 
+@media screen and (min-width: 1280px){
+	.clearfix{
+    display: block;
+    font-size: 0;
+    content: "";
+    height:280px;
+	display: block;
+}
+}
+
+@media screen and (min-width: 1472px){
+	.clearfix{
+    display: block;
+    font-size: 0;
+    content: "";
+    height:330px;
+	display: block;
+}
+}
 
 /* 轮播图插件样式 */
 #banner .carousel-box{
