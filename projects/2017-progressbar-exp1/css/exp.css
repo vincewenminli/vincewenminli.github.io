@@ -1,0 +1,123 @@
+
+/*
+ * 正式实验流程各个中间页面样式
+ */
+
+.experiments
+{
+	background-color: #FFFFFF;
+	color: #000;
+	font-family: "times new roman";
+	font-size: 16px;
+	line-height: 1.5em;
+	
+	margin: 160px auto;
+	width: 750px;
+	
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+	border-radius: 10px 10px 10px 10px;
+	padding: 30px 30px;
+}
+
+#exp{display: none;}
+
+#search_engine
+{   margin-bottom: 30px auto;
+	width: 740px;
+	display: none;
+}
+
+#literature
+{
+	display: none;
+	width: 740px;
+}
+
+#loading_symbol
+{
+	width: 200px;
+	height: 200px;
+	display: none;
+	margin-left: -25px;
+	margin-bottom: 0px;
+	margin-top: 10px auto;
+}
+
+#scale_like
+{
+	margin: 40px auto;
+	width: 740px;
+	
+	display: none;
+}
+
+#copy_time
+{
+	margin: 40px auto;
+	width: 740px;
+	
+	display: none;
+	
+}
+
+#scale_time
+{
+	margin: 40px auto;
+	width: 740px;
+	
+	display: none;
+}
+#thx
+{
+	margin: 80px auto;
+	width: 740px;
+	
+	display: none;
+}
+
+.close {
+  position: absolute;
+  left: 1080px;
+  top: 120px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+.close:hover::before, .close:hover::after {
+  background: #DB3A27;
+  cursor: pointer;
+}
+.close::before, .close::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: #000;
+}
+.close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+

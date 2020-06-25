@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<title>Login 实验登陆主界面</title>
+	<link rel="shortcut icon" href="img/logo.ico" >
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/mesgbox.css">
+	<link rel="stylesheet" href="css/exp.css" />
+	<link rel="stylesheet" type="text/css" href="css/scale.css"/>
+    <link rel="stylesheet" type="text/css" href="css/progressbar.css"/>
+</head>
+
+<body>
+	<!--登陆界面-->
+	<div id="login">
+		<h2><center>实验登陆主界面</center></h2>
+	    <fieldset>
+			<p><label for="name">姓名</label></p>
+			<p><input type="name" id="name" value="请输入您的姓名拼音" onfocus="this.value=''"></p> 
+			<p><label for="age">年龄</label></p>
+			<p><input type="age" id="age"></p> 
+			<p><label for="gender">性别</label></p>
+			<p><select id="gender">
+				<option value="1">男</option>
+				<option value="2">女</option>
+			</select></p>
+			<p><input type="submit" onclick="login_to_ins()" value="登陆"></p>
+	    </fieldset>
+	</div> 
+
+	<!--指导语界面-->
+	<div id="ins" >
+		<h2><center>指导语</center></h2>
+		<fieldset>
+            <span id="instruction" style="text-indent: 2em;">
+                <p>首先感谢您参与我们的实验！</p>
+                <p><span style="color: red;">请想象并假设您正处于以下情境</span>：你刚刚在查询有关某专题的文献，你在某学术搜索引擎内找到一篇文献，此时你点击左下方的数据库文献链接，页面正在跳转到指定文献详细页面！ 不过由于网络、自然加载等原因，这个过程需要等待一段时间，这段时间网页会呈现进度条告诉你当前加载进度！</p>
+                <p><span style="color: red;">实验流程</span>：在一个完整的试次里，你会首先看到一个类似一般搜索引擎的文献链接，请你<span style="color: red;">点击该文献链接</span>，之后会出现进度条加载，之后加载该文献内容。文献页面加载后点击跳转至评价页面，请按照指示评价进度条的喜欢程度、时间感</p>
+                <p>如果你已经理解该实验操作，请点击确认进入实验，正式实验过程中请不要离开本页面！第一部分结束后会有一次休息</p>
+            </span>
+			<p><input type="submit" onclick="ins_to_exp();" value="确认进入实验" ></p>
+		</fieldset>	
+	</div>
+	
+	<!--忍耐限度部分-->
+    <div id="exp_to_waiting" >
+    	<h2><center>指导语</center></h2>
+		<fieldset>
+            <span id="waiting_instruction" style="text-indent: 2em;">
+                <p>再次感谢您参与我们的实验！<span style="font-weight: bold;">请您放松休息两分钟</span>，之后我们将进入实验的下一个部分</p>
+                <p><span style="font-weight: bold;">实验大体实验情境和流程与之前一样</span>：文献加载过程以进度条进行反馈</p>
+                <br />
+                <p><span style="font-weight: bold;font-size: large;">特别注意:</span>这次的加载等待时间将相对较长，您需要做的是：在等待过程中，<span style="color: red;">当您不愿意继续等待时关闭页面的关闭按钮。</span> 关闭之后将结束等待呈现文献，点击后重复这一过程。本部分只需要评价16个进度条样式，实验过程非常短，<span style="color: red;">我们真诚希望您尽可能想象真实情境，评估您<span style="font-weight: bold;">真实的忍耐限度</span>，不要因想快一点结束实验而草草点击关闭，感谢您的配合</span></p>
+                <p>如果你已经理解该实验操作，请点击确认进入实验，正式实验过程中请不要离开本页面！</p>
+            </span>
+			<p><input type="submit" onclick="button_check(7);" value="确认进入实验" ></p>
+		</fieldset>	
+    </div>
+
+
+    <!--进度条评价部分-->
+    <div class="experiments" id="exp">
+    	<div id="search_engine">
+			<!-------文献数据库------->
+			<p><span style="font-weight: bold;">Abstract&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="Abstract"></span></p>
+			<br>
+			<span style="font-weight: bold;">DataSource&nbsp;&nbsp;&nbsp;</span><span style="color: blue;font-weight: bolder;text-decoration: underline;cursor: pointer;"  onclick="button_check(1)" id="btn1">ReasearchGate</span>
+    	</div>
+    	
+    	<div id="loading_symbol" style="position: relative;">
+    	   <div id="loading" style="position: relative;">
+    	   	    <img src="" id="gif" width="200px" height="200px" > 
+    	   </div>
+    	</div>
+    	<div id="bar-area" class="progress" style="position: relative;display: none;">
+	            <div class="progress-bar " id="pbar"></div>	
+        </div> 
+    	
+    	
+    	<div id="literature">
+			<center>
+				<p style="color: red;">成功链接到数据库，文献加载已加载完毕</p>
+				<iframe src="literature/file_1.pdf" id="pdf" style="height: 340px;width: 700px;"></iframe>
+				<br><br>
+				<input type="submit" onclick="button_check(3);" style="cursor: pointer;" value="我要评分" id="btn3">
+			</center>
+			<center></center>
+    	</div>
+   	
+    	<div id="copy_time">
+	        <p>1.  请根据刚才的等待时间，将这个等待时间<span style="font-weight: bold;color: red;">再现</span>出来。我们不需要非常精准地再现，你只需要<span style="color: red;font-weight: bold;">凭您的主观感觉</span>再现这个时间即可</br>
+			   <span style="color: black;font-weight: bold;">具体操作为：按空格键开始(<span style="color: red;">一直按</span>)，当你觉得等了跟刚才一样的时长，<span style="color: red;">松开空格键停止</span></span></br>
+			   </br>
+			   <center style="color: black;">按空格键开始重现等待</center>
+			</p>
+			</br>
+			<center><input type="submit" onclick="button_check(4);" value="再现成功，确定下一步" id="btn4"></center>
+    	</div>
+    	
+    	<div id="scale_time">
+			<p>2. 评价你对刚才进度条的
+				<span style="font-weight: bold;color: red;">时间长短感知</span>
+			</p>
+   	            <label class="radio-inline"><input type="radio" name="time"  value="1"/>很短</label>
+   	            <label class="radio-inline"><input type="radio" name="time"  value="2"/>比较短</label>
+   	            <label class="radio-inline"><input type="radio" name="time"  value="3"/>有点短</label>
+   	            <label class="radio-inline"><input type="radio" name="time"  value="4"/>不确定</label>
+   	            <label class="radio-inline"><input type="radio" name="time"  value="5"/>有点长</label>
+   	            <label class="radio-inline"><input type="radio" name="time"  value="6"/>比较长</label>
+   	            <label class="radio-inline"><input type="radio" name="time"  value="7"/>很长</label>
+   	            <br><br>
+   	            <center><input type="submit" onclick="button_check(5);" value="确认进入下一个试次" id="btn5"></center>
+    	</div>
+    	
+    	<div id="scale_like">
+				<p>3. 评价你对刚才进度条的
+					<span style="font-weight: bold;color: red;">喜欢程度</span>
+				</p>
+				<label class="radio-inline"><input type="radio" name="like"  value="1"/>很不喜欢</label>
+   	            <label class="radio-inline"><input type="radio" name="like"  value="2"/>不喜欢</label>
+   	            <label class="radio-inline"><input type="radio" name="like"  value="3"/>有点不喜欢</label>
+   	            <label class="radio-inline"><input type="radio" name="like"  value="4"/>不确定</label>
+   	            <label class="radio-inline"><input type="radio" name="like"  value="5"/>有点喜欢</label>
+                <label class="radio-inline"><input type="radio" name="like"  value="6"/>喜欢</label>
+ 	            <label class="radio-inline"><input type="radio" name="like"  value="7"/>很喜欢</label>
+   	            <br><br>
+   	            <center><input type="submit" onclick="button_check(6);" value="确定下一步" id="btn6"></center>		
+    	</div>
+    	
+    	<div class="close" onclick="VirtualPage_close()" id="btn" style="display: none;"></div>
+     
+        <!--致谢-->
+        <div id="thx">
+    	   <center>
+    	   	  <img src="img/logo.ico" id="teamlogo" width="100px" height="100px"> 
+    	      <p>最后感谢您参与我们的实验</p>
+    	      <span style="font-family: '楷体';">工程心理学 穿山甲小组</span>
+    	   </center>
+        </div>
+    </div> 
+    
+    
+    <div id="data" style="display: none;">
+    	<table id="data_table" class="table">
+    	  <tbody></tbody>
+    	</table>
+    </div>
+    
+    <div id="waiting_data" style="display: none;">
+    	<table id="waiting_data_table" class="table">
+    		<tbody></tbody>
+    	</table>
+    </div>
+    <!--实验控制脚本-->
+    <script type="text/javascript" src="js/appendfile.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+    <script type="text/javascript" src="js/jquery.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/tableExporter.js"></script>
+    <script type="text/javascript" src="js/jquery.base64.js"></script>
+    <script type="text/javascript" src="js/bootstrap-progressbar.js" ></script>
+    <script src="js/CopyTime_exp.js" ></script>
+</body>	
+</html>
